@@ -49,6 +49,8 @@ class Bateau:
 	bat = Bateau(2,ensp)
 	p=Position(1,2)
 	p2=Position(5,6)
+	ensp.ajouterPosition(p)
+	ensp.ajouterPosition(p2)
 	bat.taille()
 	bat.est_detruit()
 	bat.nB_Pos_toucher()
