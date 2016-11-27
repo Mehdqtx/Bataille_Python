@@ -16,7 +16,7 @@ class Bateau:
 	def taille(self): 		#taille : Bateau -> int
 							# Renvoie la taille du bateau entré en paramètre. ERREUR si le bateau n'existe pas.
 					 		# 0 < taille(b:bateau) <= 4
-					 		#L4: taille(b : Bateau) <= 4 et taille(b : Bateau) >0
+					 		# taille(b : Bateau) <= 4 et taille(b : Bateau) >0
 		
 	def est_detruit(self):	#est_detruit: Bateau -> bool
 							# Renvoie TRUE si le bateau passé en paramètre est coulé ce qui implique que toutes ses positions ont été touchées ( utiliser fonction positions) ,renvoie FALSE sinon. 
@@ -28,17 +28,23 @@ class Bateau:
 
 	def position_appartient(self,Position): # position_appartient: Bateau x Position -> bool
 											# Renvoie TRUE si la position est dans l'Ensemble de positions du bateau. FALSE sinon. ERREUR si le bateau n'existe pas.
+											# Peut servir a savoir si une position est déja occupée au sein du meme bateau
 		
 
 	def est_toucher(self, Position): # est_toucher: Bateau x Position ->bool	
 									 # Renvoie TRUE si la position entré en paramètre correspond à une des positions présente dans l'ensemble des positions du bateau. FALSE sinon, ERREUR si la position est non valide.
-									 #L7: est_touche(b: Bateau, p : Position) => est_detruit(b : Bateau) == FALSE
+									 # est_touche(b: Bateau, p : Position) => est_detruit(b : Bateau) == FALSE
 
-	def est_envue(self, Position):  #est_manquer: Bateau x Position -> bool
+	def est_envue(self, Position):  # est_envue: Bateau x Position -> bool
 						   			# Renvoie TRUE si dans la position entré en paramètre, l'une des deux coordonnées correspond a une coordonnées presente dans l'ensemble des positions du bateau. False sinon. ERREUR si le bateau n'existe pas
-						   			#L7: est_envue(b: Bateau, p : Position) => est_detruit(b : Bateau) == FALSE
+						   			# est_envue(b: Bateau, p : Position) => est_detruit(b : Bateau) == FALSE
 
+	def bat_bien_former(self): 		# bat_bien_former: Bateau -> bool
+									# Explication : Les coordonnées des bateaux sont entrées par l'utilisateur un par un. Donc pour eviter qu'il y'ai dislocation de bateau (qu'un joueur place une position en (1,1) et ensuite en (6,6)) on appel cette fonction
+									# Un bateau est bien formé si il y'a un ecart de 1 très exactement entre 2 coordonnées selon la direction que l'utilisateur voudras donner a son bateau 
+									# Par exemple si on a un bateau de taille 2, si la 1ere position du bateau est (1,1) la 2e sera soit (1,2) soit (2,1)
 	
+
 		
 
 

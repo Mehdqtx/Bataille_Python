@@ -4,25 +4,34 @@ def changerJoueur(j1,j2):
 
 def entrer_position(j):
 	taille=[1]#,2,3,4,4]
-	for i in range(len(taille))
-		ep = Ensposition()
-		eb = Ensbateau(len(taille))
+	eb = Ensbateaux(len(taille))
+	while eb.nb_bat_safe() < eb.tailleEB():
+		ep = Enspositions(taille[i])
+		b = bateau(ep,taille[i])
 		print "Entrez les coordonnees du bateau de taille ",taille[i]
-		for k in range (taille[i]):
-				print "X = "
-				x = input()
-				print "Y = "
-				y = input()
-				p = position(x,y)
-				if p.est_valide_position(): 
-					ep.ajouterPosition(p)
-				else:
-					print "Les coordonnées que vous avez entrés dépasse la grille, veuillez les rerentrer "
-					k = k-1
+		while ep.nb_position_pres() < ep.tailleEP():
+			print "X = "
+			x = input()
+			print "Y = "
+			y = input()
+			p = position(x,y)
+			if not(eb.est_present_pos(p))
+				ep.ajouterPosition(p)
+			else 
+				print "Cette position est déja utilisée. Veuillez entrer une autre position ou relancer le programme si votre bateau ne peut être complété"
 
-		b = Bateau(taille[i],ep)
-		eb.ajouterBateau(b)
-	j.modifensbateau(eb)
+
+		if bat_bien_former(b):
+			b.setEnspositions(ep)
+			eb.ajouterBateau(b)
+			eb.modif_nb_bat_safe() = eb.nb_bat_safe() + 1
+			i++
+
+		else 
+			print "Votre bateau est mal formé. Rerentrez ses coordonnees"
+
+	for b in eb :
+		j.ensbateaux().ajouterBateau(b);
 	return j
 
 eb1 = Ensbateaux()	

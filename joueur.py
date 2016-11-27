@@ -10,10 +10,10 @@ class Joueur:
 	def getActif(self):
 		
 
-	def setEnsbateaux(self,bateaux):
+	def modif_Ensbateaux(self,bateaux):
 		
 
-	def setActif(self,actif):
+	def modif_etat(self):
 		
 
 	def toursuivant(self):

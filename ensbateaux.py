@@ -25,7 +25,7 @@ class Ensbateaux :
 					  			  # safe_bateau(bat) == FALSE --> On ne verifie plus ses position lors d'un tir
 
 	def est_present_pos(self,position): # est_present_pos : Ensbateaux * Position -> bool
-										# Renvoi TRUE si la position passee en paramètre appartient a un bateau de l'ensemble de bateaux. FALSE sinon. Sera utile pour le tir
+										# Renvoi TRUE si la position passee en paramètre appartient a un bateau de l'ensemble de bateaux. FALSE sinon. Sera utile pour le tir et pour verifier si une position n'est pas déja utilisée par un bateau
 										# est_present_pos(pos) == TRUE -> pos n'appartient pas a un bateau detruit
 
 	
@@ -36,6 +36,9 @@ class Ensbateaux :
 	def nb_bat_safe(self): # nb_bat_safe : Ensbateaux -> int
 						   # Renvoi le nombre de bateaux de l'ensemble de bateaux qui ne sont pas encore détruit. Utile pour savoir si un joueur n'as plus de bateaux valides. Sert egalement lors de l'ajout des bateaux a la flotte
 						   # nb_bat_safe(creer_Ensbat()) = 0
+
+	def modif_nb_bat_safe(self): # modif_nb_bat_safe : Ensbateaux -> Ensbateaux
+								 # Modifie le nombre de bateaux vivant dans l'ensemble de bateaux passé en paramètre 
 
 	#Test unitaires
 
@@ -48,11 +51,11 @@ class Ensbateaux :
 	bat = Bateau(2,ensp)
 	eb = Ensbateaux(2)
 	eb.ajouterBateau(bat)
-	print tailleEB(eb)
-	print safe_bateau(eb)
-	print est_present_pos(eb,p)
-	print nb_bat_safe(eb)
-	print est_present_bat(eb,bat)
+	print eb.tailleEB()
+	print eb.safe_bateau()
+	print eb.est_present_pos(p)
+	print eb.nb_bat_safe()
+	print eb.est_present_bat(bat)
 	
 
 	
