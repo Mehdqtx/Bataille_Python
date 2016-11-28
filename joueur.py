@@ -17,11 +17,14 @@ class Joueur:
 	def modif_Ensbateaux(self,bateaux): 
 		
 
-	def modif_etat(self): #modif_etat : Joueur -> Joueur
+	def modif_etat(self, actif):  #modif_etat : Joueur x bool -> Joueur
+						  		  # Initialise le joueur à l'etat entré en paramètre. Si l'etat est True le joueur est actif, sinon il est inactif.
+						  		
+
+	def toursuivant(self): #toursuivant : Joueur  -> Joueur
 						  # Renvoie True si le joueur etait dans l'etat False
 						  # Renvoie False si le joueur etait dans l'etat True
 
-	def toursuivant(self): 
 		
 
  	def perdu(self): # perdu : Joueur -> Bool

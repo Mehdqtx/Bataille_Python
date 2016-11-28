@@ -1,6 +1,6 @@
 def changerJoueur(j1,j2):
-	j1.setActif(True)
-	j2.setActif(False)
+	j1.modif_etat(True)
+	j2.modif_etat(False)
 
 def entrer_position(j):
 	taille=[1]#,2,3,4,4]
@@ -42,7 +42,7 @@ joueur1 = entrezposition(joueur1)
 joueur2 = entrezposition(joueur2)
 
 while not(j1.perdu() or j2.perdu()) :
-	if j1.getActif :
+	if j1.etat :
 		print("Entrer coordonnees à frapper ")
 		print "X = "
 		x = input()
@@ -52,7 +52,7 @@ while not(j1.perdu() or j2.perdu()) :
 		res = resultat(joueur2,tir)
 		print res.resultat_tir(tir)
 
-	if j2.getActif :
+	if j2.etat :
 		print("Entrer coordonnees à frapper ")
 		print "X = "
 		x = input()
