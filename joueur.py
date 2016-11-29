@@ -4,7 +4,7 @@ class Joueur:
 	
 	def __init__(self,Ensbateaux,etat): # creer_joueur : Ensbateaux x Bool -> Joueur
 										# Creation d'un joueur qui prend en paramètre l'ensemble de bateaux du joueur et un boolean qui permet de savoir si c'est au tour du joueur de jouer (if TRUE)
-		return								 
+		return							# Initialisé a faux au depart
 
 	def ensbateaux(self): # ensbateaux : Joueur -> Ensbateaux
 						  # Renvoie l'ensemble de bateaux du joueur
@@ -13,14 +13,15 @@ class Joueur:
 	def etat(self): # etat : Joueur -> Bool
 					# Renvoie l'etat dans lequel se trouve le joueur actuellement.
 		return		# True s'il est actif, False sinon
+					# etat(creer_joueur(eb,false)) = false
 		
 
 	def modif_Ensbateaux(self,bateaux): # modif_Ensbateaux : Bateau -> Ensbateaux
 										# Permet d'ajouter le bateau passé en parametre à l'ensemble de bateaux du Joueur
 		return
 
-	def modif_etat(self, etat):  # modif_etat : Joueur x bool -> Joueur
-						  		 # L'etat entré en parametre devient l'etat du Joueur.
+	def modif_etat(self):  # modif_etat : Joueur -> Joueur
+						   # Renvoi le joueur avec son état passé a inactif si il était actif et a actif s'il était inactif
 		return
 		
 
@@ -30,8 +31,20 @@ class Joueur:
 
 	
 
+#Test unitaire
 
-
+ensp= Enspositions(1)
+p=Position(1,2)
+p2=Position(5,6)
+ensp.ajouterPosition(p)
+ensp.ajouterPosition(p2)
+bat = Bateau(2,ensp)
+eb = Ensbateaux(2)
+eb.ajouterBateau(bat)
+j = Joueur(eb,False)
+print j.etat() # Doit renvoyer False
+j.modif_etat()
+print j.etat() # Doit renvoyer True
 
 
 		

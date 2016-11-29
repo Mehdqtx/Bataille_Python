@@ -27,11 +27,13 @@ class Position:
 
 #Test unitaire
 
-p = Position(1,2);
+p = Position(1,2); 
 pos = Position(3,25);
 pos1 = Position(25,3);
-p.absice();
-p.ordonnee();
-pos.est_valide_position();
-pos1.est_valide_position();
-p.toucher();
+print p.absice()==1; # Doit renvoyer true
+print p.ordonnee()==2; # Doit renvoyer true
+print pos.est_valide_position(); # Doit renvoyer false
+print pos1.est_valide_position(); # Doit renvoyer false
+print p.toucher(); # Doit renvoyer false
+p.modif_toucher()
+print p.toucher() # Doit renvoyer true

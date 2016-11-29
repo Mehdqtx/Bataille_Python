@@ -39,12 +39,15 @@ class Enspositions :
 
 #test unitaire
 
-Ens = Enspositions(2)
+Ens = Enspositions(3)
 p = Position(1,2)
 pos1 = Position(2,3)
+pos2 = Position(2,26)
 Ens.ajouterPosition(p)
 Ens.ajouterPosition(pos1)
-print Ens.est_present_posit(p) 
-print Ens.est_present_posit(pos1)
-print Ens.nb_position_pres() == 2
-print Ens.tailleEP() == 2
+Ens.ajouterPosition(pos2)
+print Ens.est_present_posit(p)  # Doit renvoyer True
+print Ens.est_present_posit(pos1) # Doit renvoyer True
+print Ens.est_present_posit(pos2) # Doit renvoyer False
+print Ens.nb_position_pres() == 2 # Doit renvoyer True
+print Ens.tailleEP() == 2 # Doit renvoyer True
