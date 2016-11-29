@@ -6,8 +6,8 @@ class Bateau:
 	def __init__(self,taille, Enspositions): # creer_bateau : int x Enspositions -> Bateau 
 											#Creation d'un bateau qui prend en paramètre la taille du bateau et l'ensemble de ses positions sur la grille.
 											#la taille du bateau est comprise entre 1 et 4 
-											#L2: nb_Pos_toucher(creer_bateau(n : int, b: Bateau)) = 0
-											#L3: est-detruit(creer_bateau(n:int,b:Bateau)) = FALSE
+											# nb_Pos_toucher(creer_bateau(n : int, b: Bateau)) = 0
+											# est-detruit(creer_bateau(n:int,b:Bateau)) = FALSE
 		
 	def positions(self): 	# position: Bateau -> Ensposition
 							# Renvoie la liste des positions du bateau passé en paramètre si le bateau existe, ERREUR sinon.
@@ -40,7 +40,7 @@ class Bateau:
 						   			# est_envue(b: Bateau, p : Position) => est_detruit(b : Bateau) == FALSE
 
 	def bat_bien_former(self): 		# bat_bien_former: Bateau -> bool
-									# Explication : Les coordonnées des bateaux sont entrées par l'utilisateur un par un. Donc pour eviter qu'il y'ai dislocation de bateau (qu'un joueur place une position en (1,1) et ensuite en (6,6)) on appel cette fonction
+									# Explication : Les coordonnées des bateaux sont entrées par l'utilisateur une par une. Donc pour eviter qu'il y ai dislocation de bateau (qu'un joueur place une position en (1,1) et ensuite en (6,6)) on appel cette fonction
 									# Un bateau est bien formé si il y'a un ecart de 1 très exactement entre 2 coordonnées selon la direction que l'utilisateur voudras donner a son bateau 
 									# Par exemple si on a un bateau de taille 2, si la 1ere position du bateau est (1,1) la 2e sera soit (1,2) soit (2,1)
 	

@@ -18,11 +18,11 @@ def entrer_position(j):
 			if not(eb.est_present_pos(p))
 				ep.ajouterPosition(p)
 			else 
-				print "Cette position est déja utilisée. Veuillez entrer une autre position ou relancer le programme si votre bateau ne peut être complété"
+				
+				print "Cette position est déja utilisée. Bateau impossible a creer. Veuillez entrer d'autres positions pour votre bateau "
 
-
+		b.setEnspositions(ep)
 		if bat_bien_former(b):
-			b.setEnspositions(ep)
 			eb.ajouterBateau(b)
 			eb.modif_nb_bat_safe() = eb.nb_bat_safe() + 1
 			i++
@@ -31,7 +31,7 @@ def entrer_position(j):
 			print "Votre bateau est mal formé. Rerentrez ses coordonnees"
 
 	for b in eb :
-		j.ensbateaux().ajouterBateau(b);
+		j.modif_Ensbateaux(b);
 	return j
 
 eb1 = Ensbateaux()	
@@ -51,6 +51,7 @@ while not(j1.perdu() or j2.perdu()) :
 		tir = tir(x,y)
 		res = resultat(joueur2,tir)
 		print res.resultat_tir(tir)
+		changerJoueur(j2,j1)
 
 	if j2.etat :
 		print("Entrer coordonnees à frapper ")
@@ -61,6 +62,7 @@ while not(j1.perdu() or j2.perdu()) :
 		tir = tir(x,y)
 		res = resultat(joueur1,tir)
 		res.resultat_tir(tir)
+		changerJoueur(j1,j2)
 
 if j1.perdu :
 	print "Le joueur 1 a perdu, force au joueur 2"
