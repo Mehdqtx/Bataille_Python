@@ -2,22 +2,30 @@
 from resultat import * 
 
 
-def changerEtat(j): #
-	if j.etat() : 
-		j.modif_etat(False)
-
-	else :
-		j.modif_etat(True)
+def changerEtat(j): # changerEtat : Joueur -> Joueur
+					# Fonction permettant de faire passer le joueur dans l'etat actif s'il etait inactif, inactif s'il etait actif.
+	j.modif_etat()
 
 	return j
 
-def entrer_position(j):
+
+def entrer_position(j): # entrer_position : Joueur -> Joueur
+						# Fonction qui va permettre de placer les bateaux de chaque joueur.
+						# Tour à tour ils vont avoir le choix de placer leur bateaux dans la grille 21*21
+						# Chaque joueur possède sa propre grille fictive. Il est donc possible que les deux joueur place un bateau sur la meme position.
+						# Chaque joueur possède un ensemble de bateaux, 5 bateaux : un de taille 1, un de taille 2, 1 de taille 3, 2 de taille 4.
+						# Le positionnement des bateaux de taille > 1 se realise en entrant toute ses positions. (exemple : un bateau de taille 2 a deux positions à placer)
+						 # >> Le positionnement de tel bateaux implique de placer chaque positions a la suite les unes des autres pour ne pas creer un bateau disloquer ou un porte avion.
 	i = 0
+
+	# Compare le nombre de bateaux présent dans l'ensemble a la taille de l'ensemble de bateaux qui a été donné par l'utilisateur lors de la creation de l'ensemble
 	while j.ensbateaux().nb_bat_safe() < j.ensbateaux().tailleEB():
 		ep = Enspositions(taille[i])
 		b = Bateau(ep,taille[i])
+
 		print "Entrez les coordonnees du bateau de taille ",taille[i]
 		p = Positon(-1,-1)
+
 		while ep.nb_position_pres() < ep.tailleEP() and not(j.ensbateaux().est_present_pos(p)):
 			while not(p.est_valide_position()) : 
 				print "Le X entré ou le Y entré n'est pas valide. Rerentrez vos coordonnées "
