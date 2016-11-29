@@ -38,8 +38,20 @@ class Resultat :
 								 	
 
 
+#Test unitaire
 
-	
+ensp= Enspositions(1)
+p=Position(1,2)
+p2=Position(5,6)
+ensp.ajouterPosition(p)
+ensp.ajouterPosition(p2)
+bat = Bateau(2,ensp)
+eb = Ensbateaux(2)
+eb.ajouterBateau(bat)
+j = Joueur(eb,False)
+print j.etat() # Doit renvoyer False
+j.modif_etat()
+print j.etat() # Doit renvoyer True
 
 		
 
