@@ -2,7 +2,7 @@
 from resultat import * 
 
 
-def changerEtat(j):
+def changerEtat(j): #
 	if j.etat() : 
 		j.modif_etat(False)
 
@@ -61,8 +61,8 @@ while not(j1.perdu() or j2.perdu()) :
 		print "Y = "
 		y = int(input())
 		tir = tir(x,y)
-		res = resultat(joueur2,tir)
-		print res.resultat_tir(tir)
+		res = resultat(j2,x,y)
+		print res.resultat_tir(x,y)
 		
 
 	if j2.etat :
@@ -72,7 +72,7 @@ while not(j1.perdu() or j2.perdu()) :
 		print "Y = "
 		y = int(input())
 		res = resultat(j1,x,y)
-		res.resultat_tir(tir)
+		print res.resultat_tir(x,y)
 	
 	j1 = changerEtat(j1)
 	j2 = changerEtat(j2)	

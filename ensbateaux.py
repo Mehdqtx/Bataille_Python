@@ -5,7 +5,7 @@ class Ensbateaux :
 
 
 	def __init__(self,tailleEB): # creer_Ensbateaux : int  -> Ensbateau
-		return 					 # renvoie un ensemble de bateaux vide avec comme taille l'entier passé en parametre
+		return					 # renvoie un ensemble de bateaux vide avec comme taille l'entier passé en parametre
 								 # le nombre de bateaux present a la creation est de 0 et le nombre de bateaux vivant est egalement 0 
 		
 
@@ -40,7 +40,7 @@ class Ensbateaux :
 						   # nb_bat_safe(creer_Ensbat()) = 0
 
 	def modif_nb_bat_safe(self): # modif_nb_bat_safe : Ensbateaux -> Ensbateaux
-		return					 # Modifie le nombre de bateaux vivant dans l'ensemble de bateaux passé en paramètre 
+		return				     # Modifie le nombre de bateaux vivant dans l'ensemble de bateaux passé en paramètre 
 
 #Test unitaires
 

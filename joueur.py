@@ -8,7 +8,7 @@ class Joueur:
 
 	def ensbateaux(self): # ensbateaux : Joueur -> Ensbateaux
 						  # Renvoie l'ensemble de bateaux du joueur
-		return
+		return 
 
 	def etat(self): # etat : Joueur -> Bool
 					# Renvoie l'etat dans lequel se trouve le joueur actuellement.
