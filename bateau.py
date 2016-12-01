@@ -4,19 +4,19 @@ from enspositions import *
 class Bateau:
 
 	#fonction de creation 
-	def __init__(self,Enspositions): # creer_bateau : int x Enspositions -> Bateau 
-											# Creation d'un bateau qui prend en paramètre la taille du bateau et l'ensemble de ses positions sur la grille.
-		return								# la taille du bateau est comprise entre 1 et 4 
-											# nb_Pos_toucher(creer_bateau(n : int, b: Bateau)) = 0
-											# est-detruit(creer_bateau(n:int,b:Bateau)) = FALSE
-											# taillebat(creer_bateau(ep)) = ep.tailleEP()
+	def __init__(self,Enspositions): # creer_bateau : Enspositions -> Bateau 
+									 # Creation d'un bateau qui prend en paramètre la taille du bateau et l'ensemble de ses positions sur la grille.
+		return						 # La taille du bateau est comprise entre 1 et 4 
+									 # nb_Pos_toucher(creer_bateau(n : int, b: Bateau)) = 0
+									 # est-detruit(creer_bateau(n:int,b:Bateau)) = FALSE
+									 # taillebat(creer_bateau(ep)) = ep.tailleEP()
 		
 	def positions(self): 	# position: Bateau -> Ensposition
 		return				# Renvoie la liste des positions du bateau passé en paramètre si le bateau existe, ERREUR sinon.
 							# La taille de la liste des positions renvoyées est égal a la taille du bateau
 
 	def taillebat(self): 	#taillebat : Bateau -> int
-		return				# Renvoie la taille du bateau entré en paramètre. ERREUR si le bateau n'existe pas.
+		return				# Renvoie la taille de l'ensemble de positions du bateau entré en paramètre. ERREUR si le bateau n'existe pas.
 					 		# 0 < taille(b:bateau) <= 4
 					 		# taille(b : Bateau) <= 4 et taille(b : Bateau) >0
 		
@@ -53,17 +53,13 @@ class Bateau:
 # >> TEST UNITAIRE <<
 
 ensp = Enspositions(1)
-	
 p = Position(1,2)
-tir = Position(5,6)
-tir2 = Position(1,4)
-tir3 = Position(1,2)
 ensp.ajouterPosition(p)
 bat = Bateau(ensp)
 print bat.taillebat()==1 # Doit renvoyer True 
 print bat.est_detruit() # Doit renvoyer False
 print bat.nB_Pos_toucher()==0 # Doit renvoyer True 
 print bat.position_appartient(p) # Doit renvoyer True
-print bat.est_toucher(tir) # Doit renvoyer False
-print bat.est_envue(tir2) # Doit renvoyer True 
-print bat.est_toucher(tir3) # Doit renvoyer True
+print bat.est_toucher(5,6) # Doit renvoyer False
+print bat.est_envue(1,4) # Doit renvoyer True 
+print bat.est_toucher(1,2) # Doit renvoyer True

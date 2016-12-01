@@ -7,8 +7,8 @@ class Enspositions :
 								 # nb_position_pres(creer_Ensposition()) = 0
 		
 	def positions(self):# positions : Ensposition -> tableau de positions.
-		return			# C'est l'ensembles des positions present dans le type posiiton. Il est vide lorsqu'on crée un Enspositon 
-						# position(creer_Ensposition()) -> vide
+		return			# C'est l'ensemble des positions présentes dans le type posiiton. Il est vide lorsqu'on crée un Enspositon 
+						# positions(creer_Ensposition()) -> vide
 
 	def tailleEP(self): # tailleEP : Ensposition -> int
 		return			# C'est la taille de l'ensemble de positions. Donc le nombre de position max
@@ -37,7 +37,7 @@ class Enspositions :
 						
 	
 
-#test unitaire
+#Tests unitaires
 
 Ens = Enspositions(3)
 p = Position(1,2)

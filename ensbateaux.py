@@ -38,7 +38,7 @@ class Ensbateaux :
 	def modif_nb_bat_safe(self): # modif_nb_bat_safe : Ensbateaux -> Ensbateaux
 		return				     # Modifie le nombre de bateaux vivant dans l'ensemble de bateaux passé en paramètre 
 
-#Test unitaires
+# Test unitaires
 
 
 ensp= Enspositions(1)
@@ -46,7 +46,7 @@ p=Position(1,2)
 p2=Position(5,6)
 ensp.ajouterPosition(p)
 ensp.ajouterPosition(p2)
-bat = Bateau(2,ensp)
+bat = Bateau(ensp)
 eb = Ensbateaux(2)
 eb.ajouterBateau(bat)
 print eb.tailleEB()==2 # Doit renvoyer True

@@ -20,7 +20,7 @@ class Position:
 		return				 # Permet de modifier l'état de la position. Si la position est à touché elle ne doit plus etre modifiée sinon on la passe à TRUE
 
 	def est_valide_position(self): # verifie si la position crée est a l'intérieur des limites imposées par le sujet : 20 case en absices, 20 cases en ordonnee
-		return					   # est_valide_position(p : position) == true ==> 0<absice(p)<=20 et 0<ordonnee(p)<=20
+		return					   # est_valide_position(p : position) = true ==> 0 < absice(p) <= 20 et 0 <ordonnee(p) <= 20
 
 
 
@@ -35,5 +35,7 @@ print p.ordonnee()==2; # Doit renvoyer true
 print pos.est_valide_position(); # Doit renvoyer false
 print pos1.est_valide_position(); # Doit renvoyer false
 print p.toucher(); # Doit renvoyer false
+p.modif_toucher()
+print p.toucher() # Doit renvoyer true
 p.modif_toucher()
 print p.toucher() # Doit renvoyer true
