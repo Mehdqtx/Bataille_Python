@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 #Test unitaire
 
 import TypeBateau
@@ -72,7 +74,9 @@ def test_Flotte():
 	flotte = TypeFlotte.Flotte(bateau1,bateau2,bateau3,bateau4,bateau5)
 	assert flotte.BateauxRestants() == 5
 	grille.ModifVal(0,1,5)
+	print flotte.BateauxRestants()
 	assert flotte.Coule(1,grille) == True
+	print flotte.BateauxRestants()
 	assert flotte.BateauxRestants() == 4
 	assert flotte.Coule(4,grille) == False
 	print("Test Flotte validé !")

@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 #Type Flotte
 
 import TypeBateau
@@ -12,14 +14,16 @@ class Flotte:
 
 
 	def Coule(self,numbateau,grille):
-		coule = True
-		for ligne in range(len(grille)) : 
-			for colonne in range(len(grille[ligne])):
-				if grille[ligne][colonne] == numbateau : 
+		coule = False
+		for ligne in range(0,len(grille.grille)-1) : 
+			for colonne in range(0,len(grille.grille[ligne])-1):
+				if grille.ValeurCoord(colonne,ligne) == numbateau : 
 					coule = False
 				else : 
 					coule = True
-					self.bateaux_restants = self.BateauxRestants() - 1
+	
+		if coule == True : 
+			self.bateaux_restants = self.BateauxRestants() - 1
 		return coule
 
 

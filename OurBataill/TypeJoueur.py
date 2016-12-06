@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 #Type Joueur
 
 import TypeGrille
@@ -9,15 +11,15 @@ class Joueur:
 	#Creer une joueur avec une grille et une flotte associee
 	# -> Flotte
 
-	self.flotte = flotte
-	self.grille = grille
+		self.flotte = flotte
+		self.grille = grille
 
-	def Flottejoueur(self):
+	def FlotteJoueur(self):
 	#Renvoie la flotte du joueur donne
 	#Joueur -> Flotte
-	return self.flotte
+		return self.flotte
 
-	def Grillejoueur(self):
+	def GrilleJoueur(self):
 	#Renvoie la grille du joueur donne
 	#Joueur -> Grille
-	return self.grille
+		return self.grille

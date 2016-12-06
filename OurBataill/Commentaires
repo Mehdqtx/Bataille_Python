@@ -1,0 +1,6 @@
+1- Dans le type Flotte rien ne nous permet de recuperer les bateau sans passer par la structure du type
+2 - impossible de savoir comment sont géré les bateaux detruits ou pas
+3 - Dans la fonction coulé du tyoe flotte on ne sais pas a quoi sert la grille
+4 - Aucune indication par rapport a l'apprtenance de Bateaux_restant comme attribut du type Flotte
+5 - La direction du bateau en int c'est un peu......
+
