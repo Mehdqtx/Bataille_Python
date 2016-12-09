@@ -61,22 +61,30 @@ class Grille:
 		direction = bateau.direction
 		tailleB = bateau.taille
 		i=0
-	 	verif = False
+	 	verif = True
 		if direction == 0 :
-			while i< tailleB :
-				if self.grille[posX][posY+ i] != 0:
-					verif= False
+			while i< tailleB and verif == True :
+				if posX < 21 and posY+i < 21 : 
+
+					if self.grille[posX][posY+ i] != 0:
+						verif= False
+					else:
+						verif = True	
+					i+=1
 				else:
-					verif = True	
-				i+=1
+					verif = False
 
 		elif direction == 1 :
-				while i< tailleB :
-					if self.grille[posX+ i][posY] != 0:
-						verif= False
-					else :
-						verif = True
-					i+=1
+				while i< tailleB and verif == True :
+					if posX < 21 and posY+i < 21 :
+						if self.grille[posX+ i][posY] != 0:
+							verif= False
+						else :
+							verif = True
+						i+=1
+					else:
+						verif = False
+
 		return verif
 
 	def PositionnerBateau(self, bateau):
