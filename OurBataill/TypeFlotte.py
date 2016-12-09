@@ -14,13 +14,15 @@ class Flotte:
 
 
 	def Coule(self,numbateau,grille):
-		coule = False
-		for ligne in range(0,len(grille.grille)-1) : 
-			for colonne in range(0,len(grille.grille[ligne])-1):
+		coule = True
+		ligne = 0
+		while ligne < len(grille.grille) and coule == True : 
+			colonne = 0
+			while colonne < len(grille.grille[ligne]) and coule == True :
 				if grille.ValeurCoord(colonne,ligne) == numbateau : 
 					coule = False
-				else : 
-					coule = True
+				colonne += 1 
+			ligne += 1
 	
 		if coule == True : 
 			self.bateaux_restants = self.BateauxRestants() - 1

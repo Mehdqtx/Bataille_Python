@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 import TypeGrille
 import TypeBateau
 import TypeFlotte
@@ -38,7 +40,7 @@ def TourDeJeu(joueur):
         print("Touché !")
         if joueur.FlotteJoueur().Coule(tmp,joueur.GrilleJoueur()):
             print("Coulé !")
-            print("Nombre de bateaux restants : ",end=" ")
+            print ("Nombre de bateaux restants : ",end=" ")
             print(joueur.FlotteJoueur().BateauxRestants())
     elif joueur.GrilleJoueur().EnVue(TirX,TirY):
         print("En Vue !")

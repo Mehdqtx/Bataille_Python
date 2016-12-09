@@ -87,12 +87,18 @@ class Grille:
 		posY = bateau.colonne
 		tailleB = bateau.taille
 		numBateau = bateau.num
+		direc = bateau.direction
 	 	i=0
 
 	 	if self.Verification(bateau) :
 	 		while i< tailleB :
 	 			self.ModifVal(numBateau,posY,posX)
-	 			i+=1  
+	 			if direc == 0 :
+	 				posX+=1
+	 			else :
+	 				posY+=1
+
+	 			i+=1
 
 	 	return self
 
