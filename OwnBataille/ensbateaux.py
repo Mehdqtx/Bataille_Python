@@ -10,16 +10,17 @@ class Ensbateaux :
 		
 
 	def tailleEB(self) : # taille : Ensbateaux -> int
-		return			 #Renvoi la taille de l'ensemble de bateaux passé en paramètre
+		return			 # Renvoi la taille de l'ensemble de bateaux passé en paramètre
 					     # tailleEB(creer_Ensbateau(n)) = n
 
 	def bateaux(self): # bateau : Ensbateaux -> [Bateau]
 		return		   # Renvoie l'ensemble de bateaux contenue dans le tye Ensbateaux passé en paramètre
 
 
-	def ajouterBateau(self,bateau): # ajouterBateau : Ensbateaux * Bateau ->
+	def ajouterBateau(self,bateau): # ajouterBateau : Ensbateaux * Bateau -> Ensbateaux
 		return					    # Ajoute le bateau passé en parametre à la liste des bateau et renvoi l'ensbateaux modifié
 									# ajouterBateau(bat) -> 0 < nb_bat_safe() < tailleEB
+									# Le nombre de bateaux non détruit est incrémenté de 1
 
 	def safe_bateau(self,bateau): # safe_bateaux : Ensbateaux * Bateau -> bool 
 		return			  		  # Renvoi TRUE si le bateau présent dans l'ensemble de bateaux n'est pas détruit, FALSE si le bateau n'est pas détruit ou n'appartient pas a l'ensemble
@@ -31,23 +32,23 @@ class Ensbateaux :
 										# est_present_pos(pos) == TRUE -> pos n'appartient pas a un bateau detruit
 
 
-	def nb_bat_safe(self): # nb_bat_safe : Ensbateaux -> int
+	def nb_bat_safe(self): # nb_bat_safe : Ensbateaux -> Int
 		return			   # Renvoi le nombre de bateaux de l'ensemble de bateaux qui ne sont pas encore détruit. Utile pour savoir si un joueur n'as plus de bateaux valides. Sert egalement lors de l'ajout des bateaux a la flotte
 						   # nb_bat_safe(creer_Ensbat()) = 0
 
 	def modif_nb_bat_safe(self): # modif_nb_bat_safe : Ensbateaux -> Ensbateaux
-		return				     # Modifie le nombre de bateaux vivant dans l'ensemble de bateaux passé en paramètre 
+		return				     # Modifie le nombre de bateaux non détruit dans l'ensemble de bateaux passé en paramètre 
 
 # Test unitaires
 
 
-ensp= Enspositions(1)
+ensp= Enspositions(2)
 p=Position(1,2)
 p2=Position(5,6)
 ensp.ajouterPosition(p)
 ensp.ajouterPosition(p2)
 bat = Bateau(ensp)
-eb = Ensbateaux(2)
+eb = Ensbateaux(1)
 eb.ajouterBateau(bat)
 print eb.tailleEB()==2 # Doit renvoyer True
 print eb.safe_bateau(bat) # Doit renvoyer True

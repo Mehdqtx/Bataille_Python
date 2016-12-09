@@ -51,13 +51,13 @@ class Resultat :
 
 #Test unitaire
 
-ensp = Enspositions(1)
+ensp = Enspositions(2)
 p = Position(1,2)
 p2 = Position(5,6)
 ensp.ajouterPosition(p)
 ensp.ajouterPosition(p2)
 bat = Bateau(ensp)
-eb = Ensbateaux(2)
+eb = Ensbateaux(1)
 eb.ajouterBateau(bat)
 j = Joueur(eb,False)
 res = Resultat(j,5,8)

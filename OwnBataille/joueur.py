@@ -18,6 +18,7 @@ class Joueur:
 
 	def modif_Ensbateaux(self,bateaux): # modif_Ensbateaux : Bateau -> Ensbateaux
 										# Permet d'ajouter le bateau passé en parametre à l'ensemble de bateaux du Joueur
+
 		return
 
 	def modif_etat(self):  # modif_etat : Joueur -> Joueur
@@ -33,19 +34,19 @@ class Joueur:
 
 #Test unitaire
 
-ensp= Enspositions(1)
+ensp= Enspositions(2)
 p=Position(1,2)
 p2=Position(5,6)
 ensp.ajouterPosition(p)
 ensp.ajouterPosition(p2)
 bat = Bateau(ensp)
-eb = Ensbateaux(2)
+eb = Ensbateaux(1)
 eb.ajouterBateau(bat)
 j = Joueur(eb,False)
 print j.etat() # Doit renvoyer False
 j.modif_etat()
 print j.etat() # Doit renvoyer True
-
+print j.perdu() # Doit renvoyer False
 
 		
 		

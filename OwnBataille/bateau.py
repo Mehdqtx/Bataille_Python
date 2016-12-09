@@ -5,31 +5,33 @@ class Bateau:
 
 	#fonction de creation 
 	def __init__(self,Enspositions): # creer_bateau : Enspositions -> Bateau 
-									 # Creation d'un bateau qui prend en paramètre la taille du bateau et l'ensemble de ses positions sur la grille.
-		return						 # La taille du bateau est comprise entre 1 et 4 
-									 # nb_Pos_toucher(creer_bateau(n : int, b: Bateau)) = 0
-									 # est-detruit(creer_bateau(n:int,b:Bateau)) = FALSE
+									 # Creation d'un bateau qui prend en paramètre l'ensemble de ses positions sur la grille.
+		return			
+									 # nb_Pos_toucher(creer_bateau(b: Bateau)) = 0
+									 # est_detruit(creer_bateau(b:Bateau)) = FALSE
 									 # taillebat(creer_bateau(ep)) = ep.tailleEP()
 		
-	def positions(self): 	# position: Bateau -> Ensposition
-		return				# Renvoie la liste des positions du bateau passé en paramètre si le bateau existe, ERREUR sinon.
+	def positions(self): 	# positions: Bateau -> Ensposition
+		return				# Renvoie la liste des positions du bateau passé en paramètre.
 							# La taille de la liste des positions renvoyées est égal a la taille du bateau
 
+
 	def taillebat(self): 	#taillebat : Bateau -> int
-		return				# Renvoie la taille de l'ensemble de positions du bateau entré en paramètre. ERREUR si le bateau n'existe pas.
+		return				# Renvoie la taille du bateau entré en paramètre. 
 					 		# 0 < taille(b:bateau) <= 4
 					 		# taille(b : Bateau) <= 4 et taille(b : Bateau) >0
+					 		# taillebat(creer_bateau(ep)) = ep.tailleEP()
 		
 	def est_detruit(self):	# est_detruit: Bateau -> bool
 		return				# Renvoie TRUE si le bateau passé en paramètre est coulé ce qui implique que toutes ses positions ont été touchées ( utiliser fonction positions) ,renvoie FALSE sinon. 
 							
 		
-	def nB_Pos_toucher(self): 	# nB_Pos_toucher: Bateau -> int
+	def nB_Pos_toucher(self): 	# nB_Pos_toucher: Bateau -> Int
 		return					# Renvoie le nombre de positions qui ont été touchées du bateau passé en paramètre. Lorsque le nombre de position touchées est égale a la taille du bateau. la fonction est_Detruit passe a TRUE.
 								
 
 	def position_appartient(self,Position): # position_appartient: Bateau x Position -> bool
-		return								# Renvoie TRUE si la position est dans l'Ensemble de positions du bateau. FALSE sinon. ERREUR si le bateau n'existe pas.
+		return								# Renvoie TRUE si la position est dans l'Ensemble de positions du bateau. FALSE sinon.
 											# Peut servir a savoir si une position est déja occupée au sein du meme bateau
 		
 
@@ -63,3 +65,5 @@ print bat.position_appartient(p) # Doit renvoyer True
 print bat.est_toucher(5,6) # Doit renvoyer False
 print bat.est_envue(1,4) # Doit renvoyer True 
 print bat.est_toucher(1,2) # Doit renvoyer True
+print bat.nB_Pos_toucher() # Doit renvoyer 1 ce qui voudrait dire qu'il est détruit
+print bat.est_detruit() # Doit renvoyer True

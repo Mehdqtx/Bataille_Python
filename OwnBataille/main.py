@@ -21,7 +21,7 @@ def entrer_position(j): # entrer_position : Joueur -> Joueur
 	# Compare le nombre de bateaux présent dans l'ensemble, à la taille de l'ensemble de bateaux qui a été donné par l'utilisateur lors de la creation.
 	while j.ensbateaux().nb_bat_safe() < j.ensbateaux().tailleEB():
 		ep = Enspositions(taille[i])
-		b = Bateau(ep,taille[i])
+		b = Bateau(ep)
 
 		print "Entrez les coordonnees du bateau de taille ",taille[i]
 		p = Positon(-1,-1)
