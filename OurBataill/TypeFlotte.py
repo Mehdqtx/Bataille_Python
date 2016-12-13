@@ -20,14 +20,16 @@ class Flotte:
 	def Coule(self,numbateau,grille):
 		coule= True
 		ligne = 0
-		while ligne < 21 and coule == True : 
+		while ligne < 21 and coule : 
 			colonne = 0
-			while colonne < 21 and coule == True : 
+			while colonne < 21 and coule : 
 				if grille.ValeurCoord(colonne,ligne) == numbateau :
 					coule = False
+					print "ValeurCoord == bateau "+str(numbateau)+" en "+str(colonne)+","+str(ligne)
 				colonne += 1
 			ligne += 1
-		if coule == True : 
+			
+		if ligne == 21 and colonne == 21 and coule  : 
 			 self.bateaux_restants = self.BateauxRestants() - 1
 		return coule
 

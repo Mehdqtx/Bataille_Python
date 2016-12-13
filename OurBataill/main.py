@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 
 import TypeGrille
-import TypeBateau
+from TypeBateau import *
 import TypeFlotte
 import TypeJoueur
 
@@ -30,14 +30,17 @@ def Main():
 def TourDeJeu(joueur):
 #Données : Prend le joueur auquel ce n'est pas le tour
 #Résultat : Effectue un tour de jeu : demande des coordonnées de tir, vérifie si le tir est touché, à l'eau ou en vue. Dans le cas où le bateau est touché, verifie si ce bateau est coulé. Renvoie le joueur modifié.
+    print(joueur.grille.grille)
     print("Donnez la coordonnée X de tir :")
     TirX=int(input())
     print("Donnez la coordonnée Y de tir :")
     TirY=int(input())
     if joueur.GrilleJoueur().Touche(TirX,TirY):
-        tmp=joueur.GrilleJoueur().ValeurCoord(TirX,TirY)
-        joueur.GrilleJoueur().ModifVal(0,TirX,TirY)
+        tmp=joueur.GrilleJoueur().ValeurCoord(TirX,TirY)   # inversion de X et Y !!!!
+        print(tmp)
+        joueur.GrilleJoueur().ModifVal(0,TirX,TirY)        # inverser aussi ici !!!!!
         print("Touché !")
+        print(tmp)
         if joueur.FlotteJoueur().Coule(tmp,joueur.GrilleJoueur()):
             print("Coulé !")
             print ("Nombre de bateaux restants : ")
@@ -54,15 +57,20 @@ def TourDeJeu(joueur):
 def InitJoueur(Grille):
 #Données: prend une grille
 #Résultat : retourne un joueur qui a une flotte et une grille avec les 5 bateaux placés
-    Bateau1=AjouterBateau(1,1,Grille)
+    #Bateau1=AjouterBateau(1,1,Grille)
+    Bateau1=Bateau(1,1,1,1,0)
     Grille.PositionnerBateau(Bateau1)
-    Bateau2=AjouterBateau(2,2,Grille)
+    #Bateau2=AjouterBateau(2,2,Grille)
+    Bateau2=Bateau(2,2,2,2,1)
     Grille.PositionnerBateau(Bateau2)
-    Bateau3=AjouterBateau(3,3,Grille)
+    #Bateau3=AjouterBateau(3,3,Grille)
+    Bateau3=Bateau(3,3,3,3,0)
     Grille.PositionnerBateau(Bateau3)
-    Bateau4=AjouterBateau(3,4,Grille)
+    #Bateau4=AjouterBateau(3,4,Grille)
+    Bateau4=Bateau(4,4,3,4,1)
     Grille.PositionnerBateau(Bateau4)
-    Bateau5=AjouterBateau(4,5,Grille)
+    #Bateau5=AjouterBateau(4,5,Grille)
+    Bateau5=Bateau(5,5,4,5,0)
     Grille.PositionnerBateau(Bateau5)
     Flotte=TypeFlotte.Flotte(Bateau1,Bateau2,Bateau3,Bateau4,Bateau5)
     Joueur=TypeJoueur.Joueur(Flotte,Grille)

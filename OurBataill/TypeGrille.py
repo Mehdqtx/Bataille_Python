@@ -28,7 +28,7 @@ class Grille:
 		pos = self.grille[ligne][colonne]
 
 		if pos != 0:
-			self.grille[ligne][colonne] = 0
+			#self.grille[ligne][colonne] = 0
 			return True
 		else :
 			return False
@@ -91,11 +91,11 @@ class Grille:
 	#Place un bateau donne dans une grille donnee
 	#Grille x Bateau -> Grille
 
-		posX = bateau.ligne
-		posY = bateau.colonne
-		tailleB = bateau.taille
-		numBateau = bateau.num
-		direc = bateau.direction
+		posX = bateau.LigneBateau()
+		posY = bateau.ColonneBateau()
+		tailleB = bateau.TailleBateau()
+		numBateau = bateau.NumeroBateau()
+		direc = bateau.DirectionBateau()
 	 	i=0
 
 	 	if self.Verification(bateau) :
